@@ -1,0 +1,19 @@
+<p>route-four works! timer {{count}}</p>
+
+
+<!-- <button (click)="clear()">clear</button> -->
+
+
+
+
+
+
+<div *ngFor="let log of logs">{{log | date :'dd-MM-yy h:mm:ss a ' | lowercase}}</div>
+
+
+
+<input type="text" [value]="count"/>
+
+<button type="button">Start</button>
+
+<button type="button">Reset</button>

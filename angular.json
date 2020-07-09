@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-first-assignment"
+    }
+  },
+  "defaultProject": "angular-first-assignment",
+  "cli": {
+    "analytics": false
+  }
 }
