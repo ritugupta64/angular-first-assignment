@@ -1,23 +1,26 @@
 <p>route-five works!</p>
 
-
 <table>
-    <caption>Student Report</caption>
-    <thead>
-        <tr>
-            <th>Roll no</th>
-            <th>Name</th>
-            <th>Course</th>
-            <th>Marks</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let student of studentDetails">
-            <td>{{ student.ID }}</td>
-            <td>{{ student.Name }}</td>
-            <td>{{ student.Course }}</td>
-            <td>{{ student.Marks }}</td>
-        </tr>
-    </tbody>
+  <caption>
+    Student Report
+  </caption>
+  <thead>
+    <tr>
+      <th
+        class="tableHeader"
+        *ngFor="let col of headerDetails"
+        (click)="sort(col)"
+      >
+        {{ col }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentDetails">
+      <td>{{ student.ID }}</td>
+      <td>{{ student.Name }}</td>
+      <td>{{ student.Course }}</td>
+      <td>{{ student.Marks }}</td>
+    </tr>
+  </tbody>
 </table>
