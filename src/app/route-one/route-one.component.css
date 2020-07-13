@@ -18,4 +18,5 @@
     position: relative;
     animation: mymove 5s infinite;
     animation-timing-function: linear;
+    padding: 10px;
   }

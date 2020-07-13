@@ -46,8 +46,10 @@ export class RouteThreeComponent implements OnInit {
   reset() {
     clearInterval(this.counter);
     this.countDown = 0;
+    this.reverse = false;
     this.startTimer();
-  }
+   
+   }
 
   pause() {
     if (!this.isPause && !this.reverse) {
@@ -60,7 +62,7 @@ export class RouteThreeComponent implements OnInit {
       this.logger('Pause at');
       this.pauseCountNo++;
     }
-    this.isPause = !this.isPause;
     this.reverse = true;
+    this.isPause = !this.isPause;
   }
 }

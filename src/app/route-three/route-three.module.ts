@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 import { RouteThreeRoutingModule } from './route-three-routing.module';
 import { RouteThreeComponent } from './route-three.component';
@@ -13,7 +14,8 @@ import { CompFourComponent } from './comp-four/comp-four.component';
   declarations: [RouteThreeComponent, CompOneComponent, CompTwoComponent, CompThreeComponent, CompFourComponent],
   imports: [
     CommonModule,
-    RouteThreeRoutingModule
+    RouteThreeRoutingModule,
+    FormsModule
   ]
 })
 export class RouteThreeModule { }

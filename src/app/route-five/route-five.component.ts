@@ -19,12 +19,12 @@ export class RouteFiveComponent implements OnInit {
   constructor(private _studentService: StudentService) {}
 
   ngOnInit() {
-    // this._studentService.getStudentDetails().subscribe((data: any[]) => {
-    //   // console.log(data);
-    //   this.studentDetails = data;
-    // });
+    this._studentService.getStudentDetails().subscribe((data: any[]) => {
+      // console.log(data);
+      this.studentDetails = data;
+    });
 
-    this.studentDetails = this._studentService.getStudentDetails();
+    // this.studentDetails = this._studentService.getStudentDetails();
   }
 
   dynamicSort(property: any) {

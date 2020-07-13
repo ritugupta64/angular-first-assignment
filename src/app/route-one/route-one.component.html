@@ -1,4 +1,4 @@
 
 <div class="banner" *ngIf="showText">
-    <strong>{{showText}}</strong>
+    <strong [attr.class] = "showText.style">{{showText.name}}</strong>
 </div>

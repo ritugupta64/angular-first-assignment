@@ -12,7 +12,7 @@ import {TimerService} from '../../services/timer.service'
     `
   ]
 })
-export class TwoComponent implements OnInit, OnDestroy {
+export class TwoComponent implements OnInit {
 
   count:number;
   timer;
@@ -31,7 +31,7 @@ export class TwoComponent implements OnInit, OnDestroy {
   }
 
   resetTimer() {
-    this._timerService.resetTimer();
+     this._timerService.resetTimer();
   }
 
   pause(){

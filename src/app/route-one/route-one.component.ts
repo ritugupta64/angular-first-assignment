@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouteOneComponent implements OnInit {
 
-  bannerText = ['Make health your top priority', 'Health is Wealth', 'Stay healthy stay fit'];
+  // bannerText = ['Make health your top priority', 'Health is Wealth', 'Stay healthy stay fit'];
   index = 0;
   showText;
+  bannerText = [
+    {
+      name: 'Make health your top priority',
+      style: 'btn-light'
+    },
+    {
+      name: 'Health is Wealth',
+      style: 'btn-dark'
+    },
+    {
+      name: 'Stay healthy stay fit',
+      style: 'btn-secondary'
+    }
+  ]
 
 
   constructor() { }

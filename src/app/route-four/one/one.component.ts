@@ -12,8 +12,6 @@ export class OneComponent implements OnInit, OnDestroy {
 
   timer: number;
 
- // countSubject = 0;
-
   constructor(private _timerService: TimerService) {
   }
 
