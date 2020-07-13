@@ -1,9 +1,8 @@
-<h3>comp two pause and reset</h3>
 
-<!-- ccccc {{countSubject}} -->
+<label>Enter Timer Limit</label>: <input type="text" [value]="count" />
 
-<input type="text" [value]="count" #countval />
+<br/>
 
-<button type="button" (click)="pause()">Start/Pause</button>
+<button type="button" class="btn btn-secondary" (click)="pause()">Start/Pause</button>
 
-<button type="button" (click)="resetTimer()">Reset</button>
+<button type="button" class="btn btn-secondary" (click)="resetTimer()">Reset</button>

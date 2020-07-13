@@ -1,0 +1,21 @@
+.banner{
+    border: 1px solid #000;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+    margin: 20px auto;
+    height: 300px;
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+  }
+
+  .banner strong{
+    position: relative;
+    animation: mymove 5s infinite;
+    animation-timing-function: linear;
+  }

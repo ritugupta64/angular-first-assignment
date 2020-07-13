@@ -1,15 +1,13 @@
-<p>route-five works!</p>
+<h2>Student Details</h2>
 
-<table>
-  <caption>
-    Student Report
-  </caption>
+<table class="table table-striped" *ngIf="studentDetails">
   <thead>
     <tr>
       <th
         class="tableHeader"
         *ngFor="let col of headerDetails"
-        (click)="sort(col)"
+        (click)="sortOrders(col)"
+        scope="col"
       >
         {{ col }}
       </th>

@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouteOneComponent implements OnInit {
 
+  bannerText = ['Make health your top priority', 'Health is Wealth', 'Stay healthy stay fit'];
+  index = 0;
+  showText;
+
+
   constructor() { }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.showText = this.bannerText[this.index++]
+      if (this.index == this.bannerText.length)
+        this.index = 0
+
+    }, 1000);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TimerService } from '../services/timer.service';
 
 @Component({
@@ -7,36 +7,36 @@ import { TimerService } from '../services/timer.service';
   styleUrls: ['./route-four.component.css'],
   providers: [TimerService],
 })
-export class RouteFourComponent implements OnInit {
-  count = 0;
-  logs = [];
-  timer;
+export class RouteFourComponent {
+  // count = 0;
+  // logs = [];
+  // timer;
 
-  constructor(private _timerService: TimerService) {}
+  constructor() {}
 
-  startTimer() {
-    this.timer = this._timerService.source().subscribe((data) => {
-      this.count = data;
-    });
-  }
+  // startTimer() {
+  //   this.timer = this._timerService.source().subscribe((data) => {
+  //     this.count = data;
+  //   });
+  // }
 
-  ngOnInit() {
-    this.startTimer();
+  // ngOnInit() {
+  //   this.startTimer();
 
-    this._timerService.logTimer().subscribe(() => {
-      this.logs.push(new Date());
-    });
-  }
+  //   this._timerService.logTimer().subscribe(() => {
+  //     this.logs.push(new Date());
+  //   });
+  // }
 
-  resetTimer() {
-    this.timer.unsubscribe();
-    this.startTimer();
-  }
+  // resetTimer() {
+  //   this.timer.unsubscribe();
+  //   this.startTimer();
+  // }
 
-  pause(){
-    this.timer.unsubscribe();
-   // this.startService();
-  }
+  // pause(){
+  //   this.timer.unsubscribe();
+  //  // this.startService();
+  // }
 
   // startService(){
   //  let that = this;
@@ -50,6 +50,8 @@ export class RouteFourComponent implements OnInit {
     
    
  // }
+
 }
+
 
 

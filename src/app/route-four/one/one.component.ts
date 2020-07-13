@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {TimerService} from '../../services/timer.service'
 
 @Component({
@@ -6,29 +6,26 @@ import {TimerService} from '../../services/timer.service'
   templateUrl: './one.component.html',
   styleUrls: ['./one.component.css'],
 })
-export class OneComponent implements OnInit {
+export class OneComponent implements OnInit, OnDestroy {
 
-  count = 0;
-  
-  timer;
+  count:number;
+
+  timer: number;
 
  // countSubject = 0;
 
   constructor(private _timerService: TimerService) {
-    // this._timerService.countSubject.subscribe(countval => {
-    //   this.countSubject = countval
-    // })
   }
 
 
-  startTimer() {
-    this.timer = this._timerService.source().subscribe((data) => {
+  ngOnInit(): void {
+    this._timerService.countSubject.subscribe((data)=>{
       this.count = data;
     });
   }
 
-  ngOnInit() {
-    this.startTimer();
+  ngOnDestroy(): void{
+    this._timerService.destroyTimer();
   }
 
 

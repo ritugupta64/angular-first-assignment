@@ -14,16 +14,8 @@ export class ThreeComponent implements OnInit {
 
   constructor(private _timerService: TimerService) {}
 
-  startTimer() {
-    this.timer = this._timerService.source().subscribe((data) => {
-      this.count = data;
-    });
-  }
-
   ngOnInit() {
-    this.startTimer();
-
-    this._timerService.logTimer().subscribe(() => {
+    this._timerService.countSubject.subscribe(() => {
       this.logs.push(new Date());
     });
   }

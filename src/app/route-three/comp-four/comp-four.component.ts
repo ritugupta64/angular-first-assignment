@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-comp-four',
+  selector: 'comp-four',
   templateUrl: './comp-four.component.html',
   styleUrls: ['./comp-four.component.css']
 })
 export class CompFourComponent implements OnInit {
+
+  @Input('startNo') startNo: number;
+  @Input('pauseNo') pauseNo: number;
 
   constructor() { }
 

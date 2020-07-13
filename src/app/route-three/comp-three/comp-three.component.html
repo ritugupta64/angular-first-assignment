@@ -1,1 +1,4 @@
-<p>comp-three works!</p>
+<div *ngFor="let logging of log">
+  <strong>{{ logging.loggedFrom }}</strong>
+  <span>{{ logging.date | date: "dd-MM-yy h:mm:ss a " | lowercase }}</span>
+</div>

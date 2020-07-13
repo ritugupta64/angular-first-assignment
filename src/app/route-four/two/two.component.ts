@@ -1,48 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {TimerService} from '../../services/timer.service'
 
 @Component({
   selector: 'two',
   templateUrl: './two.component.html',
-  styleUrls: ['./two.component.css']
+  styles: [
+    `
+    .btn{
+      margin: 10px;
+  }
+    `
+  ]
 })
-export class TwoComponent implements OnInit {
+export class TwoComponent implements OnInit, OnDestroy {
 
-  count = 0;
+  count:number;
   timer;
 
-  //countSubject = 0;
-
   constructor(private _timerService: TimerService) {
-    // this._timerService.countSubject.subscribe(countval => {
-    //   this.countSubject = countval
-    // })
   }
 
-  startTimer() {
-    this.timer = this._timerService.source().subscribe((data) => {
+  ngOnInit() {
+    this._timerService.countSubject.subscribe((data)=>{
       this.count = data;
     });
   }
 
-  ngOnInit() {
-    this.startTimer();
+  ngOnDestroy(): void{
+    this._timerService.destroyTimer();
   }
 
   resetTimer() {
-    
-    this.timer.unsubscribe();
-    this.startTimer();
+    this._timerService.resetTimer();
   }
 
   pause(){
-    this.timer.unsubscribe();
-   // this.startService();
+    this._timerService.pause();
+    this._timerService.start(this.count)
   }
 
-  // pause(countval){
-  //   this._timerService.countSubject.next(countval.value)
- 
-  // }
 
 }

@@ -17,7 +17,7 @@ export class RouteTwoComponent implements OnInit {
   ngOnInit() {
     this.products = this._productService.getProducts();
 
-    this.products = this.products.sort((low, high) => low.price - high.price);
+    // this.products = this.products.sort((low, high) => low.price - high.price);
   }
 
   sort(event: any) {

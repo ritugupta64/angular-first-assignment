@@ -1,6 +1,8 @@
-<p>comp-two works!</p>
 
-<input type="text" [value]="comTwo" />
+<label>Enter Timer Limit</label>: <input type="text" [value] = "countDownTwo" />
 
-<button type="button" (click) = "start()">Start/Pause</button>
-<button type="button">Reset</button>
+<br/>
+
+<button type="button" class="btn btn-secondary" (click) = "pauseBtn()">Start/Pause</button>
+
+<button type="button" class="btn btn-secondary" (click) = "resetBtn()">Reset</button>

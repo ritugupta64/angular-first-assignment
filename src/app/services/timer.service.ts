@@ -1,39 +1,78 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, timer } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Subject, timer, Subscription } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimerService {
 
+  timer: Subscription;
+  countSubject = new Subject<any>();
+  tracker: number = 0;
+
+  pauseCount = 0;
+  pauseCountTimer;
+
   countDown = timer(1000, 2000);
 
-  source(): Observable<any> {
-    return this.countDown;
+  constructor() {
+    this.startTimer();
   }
 
-  logTimer() {
-    return this.countDown.pipe(take(4));
+  destroyTimer() {
+    if (this.timer) {
+      this.timer.unsubscribe();
+    }
   }
-  
 
-//   start(i): Observable<any> {
-//     (function timer() {
-//       if (--i < 0) return;
-//       setTimeout(function () {
-//        // console.log(i);
-//         timer();
-//       }, 1000);
-//     })();
-//   }
+  startTimer(): void {
+    this.timer = this.countDown.subscribe((data) => {
+      this.tracker = data;
+      this.countSubject.next(data);
+    });
+  }
 
-// start(i): Observable<any>{
-//     if (--i < 0) return;
+    start(i: any): void {
+      (function timer() {
+        if (--i < 0) return;
+        setTimeout(function () {
+         console.log(i);
+          timer();
+        }, 1000);
+      })();
+    }
 
-//     return i;
-// }
+  pause(): void {
+    if (this.timer) {
+      this.timer.unsubscribe();
+     // this.pauseCountTimer = this.pauseCount + 1;
+    }
+    
+  }
 
-// public countSubject = new Subject<any>();
+  resetTimer(): void {
+    this.timer.unsubscribe();
+    this.startTimer();
+  }
+
+
+  //   start(i): Observable<any> {
+  //     (function timer() {
+  //       if (--i < 0) return;
+  //       setTimeout(function () {
+  //        // console.log(i);
+  //         timer();
+  //       }, 1000);
+  //     })();
+  //   }
+
+  // start(i): Observable<any>{
+  //     if (--i < 0) return;
+
+  //     return i;
+  // }
+
+
 
 }

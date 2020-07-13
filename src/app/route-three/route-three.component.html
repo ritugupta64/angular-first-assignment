@@ -1,9 +1,17 @@
-<p>route-three works!</p>
+<div class="row">
+  <div class="col-6 column">
+    <comp-one [countDownOne]="countDown"></comp-one>
+  </div>
 
-<comp-one [comOne] = "reverseTimerForChild" (childaccess) = "sendDataToChild($event)"></comp-one>
+  <div class="col-6 column">
+    <comp-two [countDownTwo]="countDown" (resetClick)="reset()" (pauseClick) = "pause()"></comp-two>
+  </div>
 
-<!-- <comp-one></comp-one> -->
+  <div class="col-6 column">
+    <comp-three [log] = "logs"></comp-three>
+  </div>
 
-<comp-two [comTwo] = "accessTimer" (reverseTimer) = "reverseParentTimer($event)"></comp-two>
-
-
+  <div class="col-6 column">
+    <comp-four [startNo] = "startCountNo" [pauseNo] = "pauseCountNo"></comp-four>
+  </div>
+</div>

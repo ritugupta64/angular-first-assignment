@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-comp-three',
+  selector: 'comp-three',
   templateUrl: './comp-three.component.html',
-  styleUrls: ['./comp-three.component.css']
 })
 export class CompThreeComponent implements OnInit {
+
+  @Input('log') log;
 
   constructor() { }
 
