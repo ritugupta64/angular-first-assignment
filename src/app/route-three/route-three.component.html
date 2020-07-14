@@ -1,17 +1,21 @@
 <div class="row">
   <div class="col-6 column">
-    <comp-one [countDownOne]="countDown"></comp-one>
+    <comp-one [countDown]="countDownValue"></comp-one>
   </div>
 
   <div class="col-6 column">
-    <comp-two [countDownTwo]="countDown" (resetClick)="reset()" (pauseClick) = "pause()"></comp-two>
+    <comp-two
+      (childOutput)="childVal($event)"
+      (resetOut)="resetHandle()"
+      (loggerOut)="logs($event)"
+    ></comp-two>
   </div>
 
   <div class="col-6 column">
-    <comp-three [log] = "logs"></comp-three>
+    <comp-three [log]="parentLogger"></comp-three>
   </div>
 
   <div class="col-6 column">
-    <comp-four [startNo] = "startCountNo" [pauseNo] = "pauseCountNo"></comp-four>
+    <comp-four [startNo]="startCountA" [pauseNo]="pauseCountA"></comp-four>
   </div>
 </div>

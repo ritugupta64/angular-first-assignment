@@ -1,8 +1,20 @@
+<label>Enter Timer Limit</label>: <input type="number" [(ngModel)]="inputField" />
 
-<label>Enter Timer Limit</label>: <input type="text" [value]= "countDownTwo" />
+<br />
 
-<br/>
-
-<button type="button" class="btn btn-secondary" (click) = "pauseBtn()">Start/Pause</button>
-
-<button type="button" class="btn btn-secondary" (click) = "resetBtn()">Reset</button>
+<button
+  (click)="sendToParent()"
+  class="btn btn-primary"
+  [ngStyle]="{ cursor: inputField > 0 ? 'pointer' : 'not-allowed' }"
+  [disabled]="inputField > 0 ? false : true"
+>
+  Start/Pause
+</button>
+<button
+  (click)="sendToReset()"
+  class="btn btn-primary"
+  [ngStyle]="{ cursor: inputField > 0 ? 'pointer' : 'not-allowed' }"
+  [disabled]="inputField > 0 ? false : true"
+>
+  Reset
+</button>

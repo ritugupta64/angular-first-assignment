@@ -3,7 +3,6 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'comp-four',
   templateUrl: './comp-four.component.html',
-  styleUrls: ['./comp-four.component.css']
 })
 export class CompFourComponent implements OnInit {
 
