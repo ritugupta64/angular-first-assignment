@@ -1,4 +1,7 @@
-
-<div (click) = "onClick()" #abcd>
-  <div class="dynamic-btn"><button type="button" class="btn btn-primary">button 1</button></div>
-</div> 
+<div style="height: 700px">
+  <div *ngFor="let item of items"  class="dynamic-div">
+    <button (click)="getClickedItems(item)">
+          button {{item}}
+    </button>
+  </div>
+</div>
