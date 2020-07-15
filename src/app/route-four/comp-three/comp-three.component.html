@@ -1,0 +1,5 @@
+<h4>Logs:</h4>
+<div *ngFor="let logging of logs">
+  <strong>{{ logging.loggedFrom }}</strong>
+  <span>{{ logging.date | date: "dd-MM-yy h:mm:ss a " | lowercase }}</span>
+</div>
