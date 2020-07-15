@@ -23,7 +23,7 @@ export class TwoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
-  sendToParent() {
+  startTimer() {
     this.isPause = !this.isPause;
 
     if (this.isPause) {
@@ -44,7 +44,7 @@ export class TwoComponent implements OnInit, OnDestroy {
     this.isTimer = true;
   }
 
-  sendToReset() {
+  resetTimer() {
     this.isTimer = false;
     this._timerService.resetOut.next((this.inputField = 0));
     if (this.inputField > 0) {

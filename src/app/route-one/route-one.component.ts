@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouteOneComponent implements OnInit {
 
-  // bannerText = ['Make health your top priority', 'Health is Wealth', 'Stay healthy stay fit'];
-  index = 0;
-  showText;
+  index: number = 0;
+  showText: any;
   bannerText = [
     {
       name: 'Make health your top priority',

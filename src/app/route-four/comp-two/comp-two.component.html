@@ -3,7 +3,7 @@
 <br />
 
 <button
-  (click)="sendToParent()"
+  (click)="startTimer()"
   class="btn btn-primary"
   [ngStyle]="{ cursor: inputField > 0 ? 'pointer' : 'not-allowed' }"
   [disabled]="inputField > 0 ? false : true"
@@ -11,7 +11,7 @@
   Start/Pause
 </button>
 <button
-  (click)="sendToReset()"
+  (click)="resetTimer()"
   class="btn btn-primary"
   [ngStyle]="{ cursor: inputField > 0 ? 'pointer' : 'not-allowed' }"
   [disabled]="inputField > 0 ? false : true"

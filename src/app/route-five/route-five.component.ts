@@ -1,6 +1,5 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../services/student.service';
-// import { OrderbyPipe } from '../pipes/sort.pipe';
 
 @Component({
   selector: 'app-route-five',
@@ -20,7 +19,6 @@ export class RouteFiveComponent implements OnInit {
 
   ngOnInit() {
     this._studentService.getStudentDetails().subscribe((data: any[]) => {
-      // console.log(data);
       this.studentDetails = data;
     });
 
@@ -44,7 +42,6 @@ export class RouteFiveComponent implements OnInit {
   sortOrders(property: any) {
     this.sortType = property;
     this.sortReverse[this.sortType] = !this.sortReverse[this.sortType];
-    console.log(this.sortReverse, 'test')
     this.studentDetails.sort(this.dynamicSort(property));
   }
 }
