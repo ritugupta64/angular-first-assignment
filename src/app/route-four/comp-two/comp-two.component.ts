@@ -46,6 +46,7 @@ export class TwoComponent implements OnInit, OnDestroy {
 
   resetTimer() {
     this.isTimer = false;
+    this.isPause = true;
     this._timerService.resetOut.next((this.inputField = 0));
     if (this.inputField > 0) {
       this._timerService.loggerOut.next(this.isPause);

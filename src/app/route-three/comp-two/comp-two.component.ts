@@ -54,6 +54,7 @@ export class CompTwoComponent implements OnInit {
 
   sendToReset() {
    this.isTimer = false;
+   this.isPause = true;
     this.resetOut.emit((this.inputField = 0));
 
     clearInterval(this.timer);
