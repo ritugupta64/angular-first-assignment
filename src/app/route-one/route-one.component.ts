@@ -12,15 +12,15 @@ export class RouteOneComponent implements OnInit {
   bannerText = [
     {
       name: 'Make health your top priority',
-      style: 'btn-light'
+      addClass: 'btn-light'
     },
     {
       name: 'Health is Wealth',
-      style: 'btn-dark'
+      addClass: 'btn-dark'
     },
     {
       name: 'Stay healthy stay fit',
-      style: 'btn-secondary'
+      addClass: 'btn-secondary'
     }
   ]
 
