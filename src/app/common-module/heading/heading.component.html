@@ -1,0 +1,26 @@
+<ng-container [ngSwitch]="elementType">
+    
+  <h2 *ngSwitchCase="'h2'" [class]="elementType">
+    {{ elementText }}
+  </h2>
+
+  <h3 *ngSwitchCase="'h3'" [class]="elementType">
+    {{ elementText }}
+  </h3>
+
+  <h4 *ngSwitchCase="'h4'" [class]="elementType">
+    {{ elementText }}
+  </h4>
+
+  <h5 *ngSwitchCase="'h5'" [class]="elementType">
+    {{ elementText }}
+  </h5>
+
+  <h6 *ngSwitchCase="'h6'" [class]="elementType">
+    {{ elementText }}
+  </h6>
+
+  <h1 *ngSwitchDefault [class]="elementType">
+    {{ elementText }}
+  </h1>
+</ng-container>

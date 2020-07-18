@@ -1,10 +1,14 @@
+<heading [elementText]="'Category Page'" [elementType]="'h1'"></heading>
+
 <div class="product-header">
   <div class="btn-group">
     <button
       type="button"
       class="btn btn-outline-primary"
       (click)="onDisplayModeChange('grid')"
-      [ngStyle] = "{'background-color': displayMode === 'grid' ? '#007bff' : '#fff'}"
+      [ngStyle]="{
+        'background-color': displayMode === 'grid' ? '#007bff' : '#fff'
+      }"
     >
       Grid
     </button>
@@ -13,7 +17,9 @@
       type="button"
       class="btn btn-outline-primary"
       (click)="onDisplayModeChange('list')"
-      [ngStyle] = "{'background-color': displayMode === 'list' ? '#007bff' : '#fff'}"
+      [ngStyle]="{
+        'background-color': displayMode === 'list' ? '#007bff' : '#fff'
+      }"
     >
       List
     </button>
@@ -25,22 +31,12 @@
   </select>
 </div>
 
-<div
-  class="row row-cols-1 row-cols-md-4 product"
-  *ngIf="products"
-  [ngClass]="{ list: displayMode === 'list' }"
->
-  <div class="col mb-4 items" *ngFor="let product of products">
-    <div class="card h-100">
-      <img
-        src="{{ product.image }}"
-        class="card-img-top"
-        alt="{{ product.name }}"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Product Title: {{ product.name }}</h5>
-        <p class="card-text">Price: {{ product.price }}</p>
-      </div>
-    </div>
-  </div>
+<div class="product-container" [ngClass]="{ list: displayMode === 'list' }">
+  <cards
+    *ngFor="let product of products"
+    [cardImage]="product.image"
+    [cardName]="product.name"
+    [cardPrice]="product.price"
+  >
+  </cards>
 </div>

@@ -1,10 +1,14 @@
+<heading
+  [elementText]="'Nested divs with floating text'"
+  [elementType]="'h1'"
+></heading>
 <div class="banner" *ngIf="showText">
   <div class="banner">
     <div class="banner">
       <div class="banner">
         <div class="banner">
           <div class="banner">
-            <strong [class] = "showText.addClass">{{ showText.name }}</strong>
+            <strong [class]="showText.addClass">{{ showText.name }}</strong>
           </div>
         </div>
       </div>

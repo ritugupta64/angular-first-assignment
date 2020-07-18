@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { RouteTwoRoutingModule } from './route-two-routing.module';
 import { RouteTwoComponent } from './route-two.component';
+import {CommonModuleModule} from '../common-module/common-module.module'
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RouteTwoComponent } from './route-two.component';
   imports: [
     CommonModule,
     RouteTwoRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModuleModule
   ]
 })
 export class RouteTwoModule { }

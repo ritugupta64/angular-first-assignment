@@ -8,6 +8,7 @@ import { OneComponent } from './comp-one/comp-one.component';
 import { TwoComponent } from './comp-two/comp-two.component';
 import { ThreeComponent } from './comp-three/comp-three.component';
 import { FourComponent } from './comp-four/comp-four.component';
+import {CommonModuleModule} from '../common-module/common-module.module'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FourComponent } from './comp-four/comp-four.component';
   imports: [
     CommonModule,
     RouteFourRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModuleModule
   ]
 })
 export class RouteFourModule { }

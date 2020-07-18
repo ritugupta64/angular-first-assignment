@@ -1,3 +1,5 @@
+<heading [elementText]="'Dynamic divs on scroll'" [elementType]="'h1'"></heading>
+
 <div style="height: 700px">
   <div *ngFor="let item of items"  class="dynamic-div">
     <button class="btn btn-primary" (click)="getClickedItems(item)">
